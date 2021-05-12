@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>mBankarstvo PMB</title>
+  </head>
+  <body>
+    <!-- TOP NAVIGATION -->
+    <nav>
+      <p class="welcome">Za početak korištenja usluge se ulogirajte</p>
+      <img src="logo.png" alt="Logo" class="logo" />
+      <form class="login">
+        <input
+          type="text"
+          placeholder="korisničko ime"
+          class="login__input login__input--user"
+          data-toggle="tooltip"
+          title="pb"
+        />
+        <!-- za potrebe vježbe type="text" -->
+        <input
+          type="password"
+          placeholder="PIN"
+          maxlength="4"
+          class="login__input login__input--pin"
+          data-toggle="tooltip"
+          title="1111"
+          id="passwd"
+          name="passwd"
+        />
+        <span class="p-viewer">
+          <i class="fa fa-eye" aria-hidden="true"></i>
+        </span>
+        <button class="login__btn">&rarr;</button>
+      </form>
+    </nav>
+
+    <main class="app">
+      <!-- BALANCE -->
+      <div class="balance">
+        <div>
+          <p class="balance__label">Trenutno stanje</p>
+          <p class="balance__date">
+            Na dan <span class="date">05/03/2037</span>
+          </p>
+        </div>
+        <p class="balance__value">0000 HRK</p>
+      </div>
+
+      <!-- MOVEMENTS -->
+      <div class="movements">
+        <div class="movements__row">
+          <div class="movements__type movements__type--deposit">2 uplate</div>
+          <div class="movements__date">prije 3 dana</div>
+          <div class="movements__value">4 000 HRK</div>
+        </div>
+        <div class="movements__row">
+          <div class="movements__type movements__type--withdrawal">
+            1 withdrawal
+          </div>
+          <div class="movements__date">24/01/2037</div>
+          <div class="movements__value">-378 HRK</div>
+        </div>
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="summary">
+        <p class="summary__label">Uplate</p>
+        <p class="summary__value summary__value--in">0000 HRK</p>
+        <p class="summary__label">Isplate</p>
+        <p class="summary__value summary__value--out">0000 HRK</p>
+        <p class="summary__label">Kamate</p>
+        <p class="summary__value summary__value--interest">0000 HRK</p>
+        <button class="btn--sort">&downarrow; SORTIRAJ</button>
+      </div>
+
+      <!-- OPERATION: TRANSFERS -->
+      <div class="operation operation--transfer">
+        <h2>Uplata prema drugom korisniku naše banke</h2>
+        <form class="form form--transfer">
+          <input type="text" class="form__input form__input--to" />
+          <input type="number" class="form__input form__input--amount" />
+          <button class="form__btn form__btn--transfer">&rarr;</button>
+          <label class="form__label">Korisnik</label>
+          <label class="form__label">Iznos</label>
+        </form>
+      </div>
+
+      <!-- OPERATION: LOAN -->
+      <div class="operation operation--loan">
+        <h2>Zatraži gotovinski kredit</h2>
+        <form class="form form--loan">
+          <input type="number" class="form__input form__input--loan-amount" />
+          <button class="form__btn form__btn--loan">&rarr;</button>
+          <label class="form__label form__label--loan">Iznos</label>
+        </form>
+      </div>
+
+      <!-- OPERATION: CLOSE -->
+      <div class="operation operation--close">
+        <h2>Zatvori račun</h2>
+        <form class="form form--close">
+          <input type="text" class="form__input form__input--user" />
+          <input
+            type="password"
+            maxlength="6"
+            class="form__input form__input--pin"
+          />
+          <button class="form__btn form__btn--close">&rarr;</button>
+          <label class="form__label">Korsničko ime</label>
+          <label class="form__label">Potvrdi PINom</label>
+        </form>
+      </div>
+
+      <!-- LOGOUT TIMER -->
+      <p class="logout-timer">
+        Odjava iz sustava za <span class="timer">05:00</span>
+      </p>
+    </main>
+
+    <!-- <footer>
+      &copy; by Jonas Schmedtmann. Don't claim as your own :) Neću ne sikiraj se!
+    </footer> -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
