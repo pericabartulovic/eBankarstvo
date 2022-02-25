@@ -1,9 +1,3 @@
-/*
- * Use this CSS to learn some intersting techniques,
- * in case you're wondering how I built the UI.
- * Have fun! 😁
- */
-
 * {
   margin: 0;
   padding: 0;
@@ -17,10 +11,13 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #444;
+  color: #333;
   background-color: #f3f3f3;
   height: 100vh;
   padding: 2rem;
+  background-image: linear-gradient(#cad2fd99, #3f51b5d4), url(img/ebank.jpg);
+  background-size: cover;
+  background-position: top;
 }
 
 nav {
@@ -50,7 +47,7 @@ nav {
   font-family: inherit;
   text-align: center;
   width: 16rem;
-  border-radius: 10rem;
+  border-radius: 0.3rem;
   margin-right: 1rem;
   color: inherit;
   border: 1px solid #fff;
@@ -84,7 +81,7 @@ nav {
 .btn--sort:hover,
 .btn--sort:focus {
   outline: none;
-  color: #777;
+  color: #ededed;
 }
 
 .p-viewer {
@@ -107,10 +104,9 @@ nav {
   margin: 4rem auto;
   display: grid;
   grid-template-columns: 4fr 3fr;
-  grid-template-rows: auto repeat(3, 15rem) auto;
+  grid-template-rows: min-content repeat(3, 15rem) auto;
   gap: 2rem;
-
-  /* NOTE This creates the fade in/out anumation */
+  
   opacity: 0;
   transition: all 1s;
 }
@@ -120,7 +116,7 @@ nav {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: -1rem;
 }
 
 .balance__label {
@@ -131,7 +127,7 @@ nav {
 
 .balance__date {
   font-size: 1.4rem;
-  color: #888;
+  color: #395874;
 }
 
 .balance__value {
@@ -142,9 +138,9 @@ nav {
 /* MOVEMENTS */
 .movements {
   grid-row: 2 / span 3;
-  background-color: #fff;
-  border-radius: 1rem;
-  overflow: scroll;
+  background-color: #ffffffbd;
+  border-radius: 0.3rem;
+  overflow-y: scroll;
 }
 
 .movements__row {
@@ -160,7 +156,7 @@ nav {
   font-weight: 500;
   color: #fff;
   padding: 0.1rem 1rem;
-  border-radius: 10rem;
+  border-radius: 0.3rem;
   margin-right: 2rem;
 }
 
@@ -171,12 +167,12 @@ nav {
   color: #666;
 }
 
-.movements__type--deposit {
-  background-image: linear-gradient(to top left, #39b385, #9be15d);
+.movements__type--uplata {
+  background-image: linear-gradient(to top left, #39b385, #088392);
 }
 
-.movements__type--withdrawal {
-  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+.movements__type--isplata {
+  background-image: linear-gradient(to top left, #e22a4c, #a01c44);
 }
 
 .movements__value {
@@ -190,7 +186,8 @@ nav {
   display: flex;
   align-items: baseline;
   padding: 0 0.3rem;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+  background-color: #2a1a3e;
 }
 
 .summary__label {
@@ -198,6 +195,7 @@ nav {
   font-weight: 500;
   text-transform: uppercase;
   margin-right: 0.8rem;
+  color: white;
 }
 
 .summary__value {
@@ -221,32 +219,34 @@ nav {
   font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
+  align-self: flex-start;
+  color: #d3274a;
 }
 
 /* OPERATIONS */
 .operation {
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
   padding: 3rem 4rem;
-  color: #333;
+  color: #fff;
 }
 
 .operation--transfer {
-  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+  background-image: linear-gradient(to top left, #3f51b5, #0f5790);
 }
 
 .operation--loan {
-  background-image: linear-gradient(to top left, #39b385, #9be15d);
+  background-image: linear-gradient(to top left, #39b385, #078292);
 }
 
 .operation--close {
-  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+  background-image: linear-gradient(to top left, #e52a4c, #130136);
 }
 
 h2 {
   margin-bottom: 1.5rem;
   font-size: 1.7rem;
   font-weight: 600;
-  color: #333;
+  color: #fff;
 }
 
 .form {
@@ -274,7 +274,7 @@ h2 {
   text-align: center;
   color: #333;
   padding: 0.3rem 1rem;
-  border-radius: 0.7rem;
+  border-radius: 0.2rem;
   transition: all 0.3s;
 }
 
@@ -290,7 +290,7 @@ h2 {
 
 .form__btn {
   border: none;
-  border-radius: 0.7rem;
+  border-radius: 0.2rem;
   font-size: 1.8rem;
   background-color: #fff;
   cursor: pointer;

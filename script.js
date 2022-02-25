@@ -1,6 +1,6 @@
 'use strict';
-/////UDEMY COURSE prema Jonas Schmedtmann -> The Complete JavaScript Course 2020 From Zero to Expert!
 
+alert('username: pb \n pass: 1111');
 /////////////////////////////////////////////////
 // mBankarstvo APP
 
@@ -114,7 +114,7 @@ const displayMovements = function (acc, sort = false) {
     : acc.movements;
 
   movs.forEach(function (mov, i) {
-    const type = mov > 0 ? 'deposit' : 'withdrawal';
+    const type = mov > 0 ? 'uplata' : 'isplata';
 
     const date = new Date(acc.movementsDates[i]);
     const displayDate = formatMovementDate(date, acc.locale);
@@ -125,7 +125,7 @@ const displayMovements = function (acc, sort = false) {
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${
       i + 1
-    } ${type}</div>
+    }. ${type}</div>
         <div class="movements__date">${displayDate}</div>
         <div class="movements__value">${formattedMov}</div>
       </div>
@@ -217,7 +217,7 @@ const startLogOutTimer = function () {
 // Event handlers
 let currentAccount, timer;
 
-// FAKE ALWAYS LOGGED IN
+//FAKE ALWAYS LOGGED IN
 // currentAccount = account1;
 // updateUI(currentAccount);
 // containerApp.style.opacity = 100;
